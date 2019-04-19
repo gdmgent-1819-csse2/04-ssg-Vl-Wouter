@@ -1,4 +1,5 @@
 module.exports = {
+	pathPrefix: "/04-ssg-Vl-Wouter",
   siteMetadata: {
     title: `WebGL2`,
     description: `WebGL2 @ Artevelde`,
