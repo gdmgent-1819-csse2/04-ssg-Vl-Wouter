@@ -1,21 +1,36 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import React from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import HomeLayout from '../components/layout/home'
+import SEO from '../components/seo'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+	<StaticQuery 
+		query={graphql`
+			query HomeDescQuery {
+				site {
+					siteMetadata {
+						description
+						author
+					}
+				}
+			}
+		`}
+
+		render={data => (
+			<HomeLayout>
+				<SEO title='Home' keywords={[`gatsby`, `react`, `docs`]} />
+				<h1>{data.site.siteMetadata.description}</h1>
+				<div className="buttonContainer">
+					<Link className='btn btn-primary' to='/docs/classes'>Docs</Link>
+					<a href="https://github.com/gdmgent-1819-csse2/01-webgl2-Vl-Wouter" className='btn btn-outline-primary'>Github</a>
+				</div>
+
+				<div className='homeFooter'>
+					<p>&copy; {new Date().getFullYear()} - {data.site.siteMetadata.author} @ Artevelde University College Ghent</p>
+				</div>
+			</HomeLayout>
+		)}
+	/>
 )
 
 export default IndexPage

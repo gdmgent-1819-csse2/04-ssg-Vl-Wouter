@@ -1,0 +1,131 @@
+/* General styling */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
+html, body {
+	/* background-color: #232323;
+	color: #e0e0e0 !important; */
+	background: #fefefe;
+	color: #232323 !important;
+	font-family: 'Montserrat', sans-serif;
+}
+
+p {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	color: #c42454 !important;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+
+a:hover {
+	color: #686868;
+}
+
+pre {
+	border-radius: 10px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+pre::before {
+	content: "javascript";
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: right;
+	padding: 10px 20px;
+	height: auto;
+	background-color: #c42454;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 0 0 0 20px;
+	color: #ffffff;
+}
+
+/* Doc header styling */
+.docheader {
+	height: 8vh;
+	border-bottom: 1px solid #00000040;
+	display: flex;
+	box-sizing: border-box;
+	padding: 0 5%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.docTitle {
+	margin: 0;
+	line-height: 0;
+	font-weight: 700;
+}
+
+a.docTitle:hover {
+	color: #000000;
+}
+
+.docHeaderLinks {
+	height: 100%;
+	display: flex;
+	flex-basis: 30%;
+	justify-content: space-between;
+	border-left: 1px solid #00000040;
+	align-items: center;
+	padding-left: 5%;
+}
+
+/* Sidebar styles */
+.sideLink {
+	display: block;
+	padding-left: 10%;
+	font-weight: 400;
+}
+
+.chapterLink {
+	font-weight: 700;
+	padding-left: 5%;
+	color: #c42454;
+}
+
+.chapterLink:hover {
+	color: #c75d7d
+}
+
+/* Doc page styling */
+
+.docs-container {
+	display: flex;
+	height: 92vh;
+}
+
+.docs-sidebar {
+	flex-basis: 20%;
+	flex-grow: 0;
+	border-right: 1px solid #00000040;
+	padding-top: 2%;
+	flex-shrink: 0;
+}
+
+.docs-content {
+	padding: 2% 5% 0 5%;
+	overflow: auto;
+	width: 100%;
+}
+
+.docPostTitle {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+a.docPostSubTitle {
+	display: block;
+	margin-bottom: 20px;
+	text-align: center;
+}
